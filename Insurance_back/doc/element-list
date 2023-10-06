@@ -1,0 +1,9 @@
+com.insurance
+com.insurance.controller
+com.insurance.entities
+com.insurance.exception
+com.insurance.helper
+com.insurance.jwt.config
+com.insurance.repository
+com.insurance.services
+com.insurance.services.impl

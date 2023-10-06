@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <mat-icon class="icon">perm_identity</mat-icon>
+        <br/>
+        <br/>
+        <h4 class="name">{{loginService.getUser().name}}</h4>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/admin">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/admin/policy">
+            <mat-icon>toc</mat-icon>
+            <span>Policies</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/admin/addPolicy">
+            <mat-icon>toc</mat-icon>
+            <span>Add Policy</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/admin/plan">
+            <mat-icon>toc</mat-icon>
+            <span>Plans</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/admin/addPlan">
+            <mat-icon>toc</mat-icon>
+            <span>Add Plan</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/admin/allUsers">
+            <mat-icon>perm_identity</mat-icon>
+            <span>All Users</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

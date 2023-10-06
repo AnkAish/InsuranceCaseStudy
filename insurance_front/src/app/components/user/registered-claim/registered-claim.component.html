@@ -1,0 +1,29 @@
+<div class="container table-responsive">
+    <table *ngIf="claim_object" class="table table-striped wid" style="text-align: center;">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Reason</th>
+            <th>Total Cover</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of claim_object">
+            <td>{{c.userPlanDetail.orderId}}</td>
+            <td>{{c.reason}}</td>
+            <td>{{c.userPlanDetail.sumAssured}}</td>
+            <!-- Status -->
+            <td >
+              <p *ngIf="c.claimStatus==0" class="text-danger">Rejected</p>
+              <p *ngIf="c.claimStatus==1" class="text-warning">Pending</p>
+              <p *ngIf="c.claimStatus==2"class="text-success">Approved</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container" *ngIf="!claim_object">
+      <h1 style="font-size: 70px; font-weight: 500;">No Claims are Generated Yet.</h1>
+    </div>
+    

@@ -1,0 +1,23 @@
+.about-container__text {
+    font-size: 18px;
+    width: 488px;
+    margin: 0 auto;
+    line-height: 28px;
+}
+
+.about-container__text {
+    font-size: 20px;
+    font-weight: 500px;
+    text-align: center;
+    /* opacity: .6; */
+    padding-top: 25px;
+    line-height: 34px;
+    max-width: 725px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: xx-large;
+    margin-top: 30px;
+    font-family:serif;
+}

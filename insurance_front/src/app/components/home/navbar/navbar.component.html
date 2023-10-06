@@ -1,0 +1,107 @@
+<div style="height: 100vh;">
+  <mat-toolbar color="primary" >
+    <mat-toolbar-row>
+
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div *ngIf="!loggedIn">
+      <span >
+        <button routerLink="homePage" style="font-weight: bolder;font-size: x-large;" mat-icon-button >Insurance Application</button>
+      </span>
+      </div>
+
+      <div *ngIf="loggedIn">
+      <span style="font-weight: bolder;font-size: x-large;">Insurance Application</span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div fxShow="true" fxHide.lt-md="true">
+
+          <button *ngIf="!loggedIn" [routerLink]="'homePage'" mat-button style="font-size:20px;">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Home
+          </button>
+
+          <button *ngIf="!loggedIn" mat-button class="policy-row">
+            <mat-icon> sort </mat-icon>
+            <mat-lable style="font-size:20px;">View Policy</mat-lable>
+            <mat-select type="text" class="policy-row"  >
+            <mat-option >--Select--</mat-option>
+            <mat-option *ngFor="let p of policyData" [routerLink]="['/homePolicy',p.policyId]" value="{{p.policyId}}">{{p.policyName}}</mat-option>
+            </mat-select>
+          </button>
+
+          <button *ngIf="!loggedIn" [routerLink]="'aboutUs'" mat-button style="font-size:20px;">
+            <mat-icon> class</mat-icon> About Us
+          </button>
+
+          <button *ngIf="!loggedIn" [routerLink]="'contactUs'" mat-button style="font-size:20px;">
+            <mat-icon> contacts</mat-icon> Contact Us
+          </button>
+
+          <button *ngIf="!loggedIn" [routerLink]="'login'" mat-button style="font-size:20px;">
+            <mat-icon> account_circle </mat-icon> Login
+          </button>
+
+          <button *ngIf="!loggedIn" [routerLink]="'signUp'" mat-button style="font-size:20px;">
+            <mat-icon> account_circle </mat-icon> Register
+          </button>
+
+          <button *ngIf="loggedIn" (click)="logoutUser()" mat-button style="font-size:20px;">
+            <mat-icon> exit_to_app </mat-icon> Logout
+          </button>
+
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar> 
+
+
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav >
+      <mat-nav-list *ngIf="!loggedIn">
+
+        <button *ngIf="!loggedIn" [routerLink]="'homePage'" mat-button style="font-size:20px;">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Home
+        </button><br>
+
+        <button *ngIf="!loggedIn" mat-button class="policy-row">
+          <mat-icon> sort </mat-icon>
+          <mat-lable style="font-size:20px;">View Policy</mat-lable>
+          <mat-select type="text" class="policy-row"  >
+          <mat-option >--Select--</mat-option>
+          <mat-option *ngFor="let p of policyData" [routerLink]="['/homePolicy',p.policyId]" value="{{p.policyId}}">{{p.policyName}}</mat-option>
+          </mat-select>
+        </button><br>
+
+        <button *ngIf="!loggedIn" [routerLink]="'aboutUs'" mat-button style="font-size:20px;">
+          <mat-icon> class</mat-icon> About Us
+        </button><br>
+
+        <button *ngIf="!loggedIn" [routerLink]="'contactUs'" mat-button style="font-size:20px;">
+          <mat-icon> contacts</mat-icon> Contact Us
+        </button><br>
+
+        <button *ngIf="!loggedIn" [routerLink]="'login'" mat-button style="font-size:20px;">
+          <mat-icon> account_circle </mat-icon> Login
+        </button><br>
+
+        <button *ngIf="!loggedIn" [routerLink]="'signUp'" mat-button style="font-size:20px;">
+          <mat-icon> account_circle </mat-icon> Register
+        </button><br>
+
+        <button *ngIf="loggedIn" (click)="logoutUser()" mat-button style="font-size:20px;">
+          <mat-icon> exit_to_app </mat-icon> Logout
+        </button>
+
+        <a (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Close
+        </a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

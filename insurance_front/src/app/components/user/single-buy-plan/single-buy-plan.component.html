@@ -1,0 +1,47 @@
+<mat-card >
+   <h1 style="font-weight: bold;">{{planName}}</h1>
+   <mat-list>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Premium Amount : {{user_plan.premiumAmount}}/- INR</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Payment Frequency : In Each {{paymentFrequency}} Month</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Your Premium Duration Is Upto : {{user_plan.duration}} Years</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Plan Will Starts From : {{user_plan.startDate}}</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Ends By : {{user_plan.endDate}}</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">
+            <h3>Total Cover You Get : {{user_plan.sumAssured}}/- INR</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+   </mat-list>
+   <!-- <div align="center" class="container text-center mt20">
+     <button routerLink="/dashBoard/nominee" mat-raised-button color="accent">Buy Plan</button>
+  </div> -->
+  <div align="center" class="container text-center mt20">
+   <button (click)="clickMethod()" mat-raised-button color="accent">Buy Plan</button>
+</div>
+ </mat-card>

@@ -1,0 +1,24 @@
+<div class="container">
+<mat-card *ngIf='plans'>
+    <h1 style="font-weight: bold; text-align: center;">ALL PLANS</h1>
+    <mat-list *ngFor="let p of plans">
+      <div *ngIf="user_age>p.minAge && user_age<p.maxAge">
+        <mat-list-item >
+            <div mat-line>
+               <mat-icon mat-list-icon>category</mat-icon><h1> {{p.planName}}</h1>
+            </div>
+           <div mat-line><h4>TYPE:  {{p.planType}}</h4></div>
+           <div mat-line><h4>AGE CONSTRAINT:  {{p.minAge}} To {{p.maxAge}} Years </h4></div>
+           <button [routerLink] = "['/dashBoard/singlePlan',p.planId]" style="float: right;"
+            mat-stroked-button color="accent">Detail</button>
+           <div mat-line><h4>VALIDITY:  {{p.planValidity}}</h4></div>
+           <div mat-line><h4>DESCRIPTION:  {{p.planDescription}}</h4></div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </div>
+    </mat-list>
+  </mat-card>
+</div>
+<div class="container" *ngIf="!plans">
+  <h1 style="font-size: 70px; font-weight: 500;">No Plans Yet.</h1>
+</div>

@@ -1,0 +1,78 @@
+<mat-card class="margin">
+    <mat-card-content>
+        <div class="container">
+            <div class="container text-center">
+                <img src="../../assets/images/profile-2.jfif" alt="" class="profile-image">
+            </div>
+            <br>
+            <table class="table table-striped">
+                <tr>
+                    <td>Name</td>
+                    <td *ngIf="!nameEdit">{{user.name}}</td>
+
+                    <td *ngIf="!nameEdit"><button type="button" (click)="editName()" mat-icon-button color="primary">
+                            <mat-icon>edit</mat-icon>
+                        </button></td>
+
+                    <td *ngIf="nameEdit"><input type="text" [(ngModel)]="name" value="{{user.name}}"></td>
+
+                    <td *ngIf="nameEdit">
+                        <button type="button" (click)="updateName()" mat-icon-button color="green">
+                            <mat-icon>check_circle_outline</mat-icon>
+                        </button>
+                        <button type="button" (click)="cancelEdit()" mat-icon-button color="accent">
+                            <mat-icon>clear</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <td>ContactNo</td>
+                    <td *ngIf="!contactEdit">{{user.contactNo}}</td>
+
+                    <td *ngIf="!contactEdit"><button type="button" (click)="editContact()" mat-icon-button
+                            color="primary">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </td>
+                    <td *ngIf="contactEdit"><input type="text" [(ngModel)]="contact" value="{{user.contactNo}}">
+                    </td>
+                    <td *ngIf="contactEdit">
+                        <button type="button" (click)="updateContact()" mat-icon-button color="green">
+                            <mat-icon>check_circle_outline</mat-icon>
+                        </button>
+                        <button type="button" (click)="cancelEdit()" mat-icon-button color="accent">
+                            <mat-icon>clear</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td>{{user.dob}}</td>
+                </tr>
+                <tr>
+                    <td>Adhar Number</td>
+                    <td>{{user.adharNo}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{user.gender}}</td>
+                </tr>
+                <tr *ngIf="user.isSmoker">
+                    <td>Is Smoker</td>
+                    <td>YES</td>
+                </tr>
+                <tr *ngIf="user.isAlcoholer">
+                    <td>Is Alcoholer</td>
+                    <td>YES</td>
+                </tr>
+            </table>
+            <mat-card-actions class="text-center">
+                <button mat-raised-button color="primary" routerLink="/dashBoard/resetPassword">Reset Password</button>
+            </mat-card-actions>
+        </div>
+    </mat-card-content>
+</mat-card>

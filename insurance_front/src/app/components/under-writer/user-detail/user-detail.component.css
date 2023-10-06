@@ -1,0 +1,13 @@
+mat-list{
+    padding: 16px;
+    color: white; 
+    width: 1000px;
+    max-width: 100%;
+}
+.fnt{
+    font-size: large;
+    font-weight: bolder;
+}
+.ml-5{
+    margin-left: 20px;
+}

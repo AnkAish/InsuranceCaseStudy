@@ -1,0 +1,60 @@
+<div class="container table-responsive">
+<table *ngIf="user_plan_object" class="table table-striped wid" style="text-align: center;">
+    <thead>
+      <tr>
+        <th>OrderId</th>
+        <th>Plan</th>
+        <th>Policy</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Premium</th>
+        <th>Amount Paid</th>
+        <th>Duration</th>
+        <th>Installments</th>
+        <th>Sum Assured</th>
+        <th>Status</th>
+        <th>Action</th>
+        <th>Payment</th>
+        <th>Nominee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of user_plan_object">
+        <td>{{u.orderId}}</td>
+        <td>{{u.plan.planName}}</td>
+        <td>{{u.plan.policy.policyName}}</td>
+        <td>{{u.startDate}}</td>
+        <td>{{u.endDate}}</td>
+        <td>{{u.premiumAmount}}</td>
+        <td>{{u.amountPaid}}</td>
+        <td>{{u.duration}} Years</td>
+        <td>{{u.count}}</td>
+        <td>{{u.sumAssured}}</td>
+        <!-- Status -->
+        <td >
+          <p *ngIf="u.isVerified==0" class="text-danger">Rejected</p>
+          <p *ngIf="u.isVerified==1" class="text-warning">Pending</p>
+          <p *ngIf="u.isVerified==2"class="text-success">Approved</p>
+          <p *ngIf="u.isVerified==3"class="text-success">Claimed</p>
+        </td>
+        <!-- Action -->
+        <td >
+          <button *ngIf="u.isVerified==0" type="button" (click)="deletePlan(u.orderId)" class="btn btn-danger">Delete</button>
+          <button *ngIf="u.isVerified==2" type="button" [routerLink] = "['/dashBoard/claim',u.orderId]" class="btn btn-success">Claim</button>
+        </td>
+        <!-- Payment -->
+        <td >
+          <button *ngIf="u.isVerified===2 && u.count" type="button" (click)="payment(u.orderId)" class="btn btn-warning">Payment</button>
+        </td>
+        <!-- Nominee -->
+        <td >
+          <button *ngIf="u.plan.policy.policyName==='Life Insurance'" type="button" [routerLink] = "['/dashBoard/nomineeDetail',u.orderId]" class="btn btn-primary">Nominee</button>
+          <p *ngIf="!(u.plan.policy.policyName==='Life Insurance')" class="text-danger">Not Applicable</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container" *ngIf="!user_plan_object">
+  <h1 style="font-size: 70px; font-weight: 500;">No Plans are bought Yet.</h1>
+</div>

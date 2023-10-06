@@ -1,0 +1,20 @@
+<mat-card>
+    <h1 style="font-weight: bold;">User Detail</h1>
+    <mat-list >
+        <mat-list-item class="fnt">
+            <div mat-line></div>
+           <div mat-line>NAME: {{user_plan_object.user.name}}</div>
+           <div mat-line>EMAIL: {{user_plan_object.user.email}}</div>
+           <div mat-line *ngIf="user_plan_object.user.isSmoker">IS-SMOKER: YES</div>
+           <div mat-line *ngIf="user_plan_object.user.isAlcoholer">IS-ALCOHOLER: YES</div>
+           <div mat-line>AGE: {{user_plan_object.user.age}}</div>
+           <div mat-line>
+              <mat-card-action style="margin-top: 10px;">
+                 <button type="button" (click)="set2()" class="btn btn-success ">Approve</button>
+                 <button type="button" (click)="set0()" class="btn btn-danger ml-5">Reject</button>
+              </mat-card-action>
+           </div>
+           <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+  </mat-card>

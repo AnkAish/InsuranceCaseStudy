@@ -1,0 +1,36 @@
+<div class="container">
+<mat-card *ngIf="plans">
+    <h1 style="font-weight: bold;">All Plans</h1>
+    <mat-list *ngFor="let p of plans">
+      <a>
+        <mat-list-item >
+           
+            <div mat-line>
+               
+              <span style="font-weight: 500px;font-size: x-large;">PLAN NAME: </span>
+               <span style="font-weight: bolder;font-size: 20px;">{{p.planName}}</span>
+            </div>
+           <div mat-line><span style="font-weight: 500px;font-size: x-large;">PLAN TYPE: </span>
+            <span style="font-weight: bold;font-size: 18px;">{{p.planType}}</span></div>
+           <div mat-line><span style="font-weight: 500px;font-size: x-large;">POLICY: </span>
+            <span style="font-weight: bold;font-size: 16px;">{{p.policy.policyName}}</span></div>
+           <div mat-line><span style="font-weight: 500px;font-size: x-large;">DESCRIPTION: </span>
+            {{p.planDescription}}</div>
+           <mat-divider></mat-divider>
+           <div mat-line>
+            <mat-card-action>
+               <button (click)="deletePlan(p.planId)" mat-stroked-button color="accent" style="float: right;">Delete</button>
+            </mat-card-action>
+           </div>
+        </mat-list-item>
+      </a>
+    </mat-list>
+  
+    <div align="center" class="container text-center mt20">
+       <button routerLink="/admin/addPlan" mat-raised-button color="accent">Add Plan</button>
+    </div>
+  </mat-card>
+</div>
+  <div class="container" *ngIf="!plans">
+    <h1 style="font-size: 70px; font-weight: 500;">No Plans Yet.</h1>
+  </div>

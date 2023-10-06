@@ -1,0 +1,27 @@
+<div class="container table-responsive" *ngIf="claim_object">
+    <table class="table table-striped wid">
+        <thead>
+          <tr>
+            <th>Claim Id</th>
+            <th>Order Id</th>
+            <th>Plan</th>
+            <th>Generation Date</th>
+            <th>Claim Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of claim_object">
+            <td>{{u.claimId}}</td>
+            <td>{{u.userPlanDetail.orderId}}</td>
+            <td>{{u.userPlanDetail.plan.planName}}</td>
+            <td>{{u.generationDate}}</td>
+            <td>{{u.claimAmount}}</td>
+            <td><button type="button" [routerLink]="['/underDashboard/claimDetail',u.claimId]" class="btn btn-outline-warning">See Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div class="container" *ngIf="!claim_object">
+  <h1 style="font-size: 70px; font-weight: 500;">No Requests Yet.</h1>
+</div>

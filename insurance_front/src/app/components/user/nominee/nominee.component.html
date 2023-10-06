@@ -1,0 +1,50 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Nominee Detail</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup] = "addnominee" (ngSubmit) ="dataSubmit()">
+      
+      <mat-card-content>
+        <div class="mat-form-field--inline">
+        <mat-form-field class="example-full-width" >
+          <input matInput [(ngModel)] ="nominee.name"  placeholder="Name" name="name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)] ="nominee.email" placeholder="Email" name="email" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="mat-form-field--inline">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="DOB" [(ngModel)] ="nominee.dob" [matDatepicker]="picker" name="dob" formControlName="dob">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-select type="text" [(ngModel)] ="nominee.gender" formControlName="gender" name="gender" placeholder="Gender">
+            <mat-option>--Select--</mat-option>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Transgender">Transgender</mat-option>
+            <mat-option value="Others">Others</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div class="mat-form-field--inline">
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)] ="nominee.relation" placeholder="Relation" name="relation" formControlName="relation">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input type="number" [(ngModel)] ="nominee.contactNo" matInput placeholder="ContactNo" name="contactNo" formControlName="contactNo">
+        </mat-form-field>
+      </div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="address" [(ngModel)] ="nominee.address" formControlName="address">
+      </mat-form-field>
+      </mat-card-content>
+      <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,95 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div" >
+  <mat-card fxFlex="35" style="border:gainsboro; border-width:1px; border-style:solid;" style="margin-top: 25px;">
+    <mat-toolbar color="primary" ><span class="title-center"> Registration Form </span></mat-toolbar>
+    
+    <form  fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup] = "customerSignupForm" (ngSubmit) ="dataSubmit()" >
+      
+    <div fxLayout.gt-sm="row" fxLayout="column" >
+
+      <div fxFlex.gt-sm="50%">
+        <mat-form-field >
+          <input matInput type="text" placeholder="Name" formControlName="name">
+        </mat-form-field>
+      </div> 
+
+      <div fxFlex.gt-sm="50%">
+        <mat-form-field >
+          <input matInput type="email"placeholder="Email" formControlName="email" >
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div fxLayout.gt-sm="row" fxLayout="column" >
+      <div fxFlex.gt-sm="50%">
+        <mat-form-field >
+          <input matInput type="number" placeholder="Contact" formControlName="contactNo">
+        </mat-form-field> 
+      </div> 
+
+      <div fxFlex.gt-sm="50%" >
+        <mat-form-field >
+          <input matInput type="number" placeholder="Adhar Number" formControlName="adharNo" >
+        </mat-form-field>
+      </div>
+
+    </div>
+
+
+      <div fxLayout.gt-sm="row" fxLayout="column"  > 
+
+        <div fxFlex.gt-sm="50%">
+          <mat-form-field >
+            <mat-select formControlName="isAlcoholer" placeholder="Is Alcoholer">
+              <mat-option>--Select--</mat-option>
+              <mat-option value=1>Yes</mat-option>
+              <mat-option value=0>No</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          <div fxFlex.gt-sm="50%"> 
+            <mat-form-field >
+              <mat-select type="text"  formControlName="isSmoker" placeholder="Is Smoker">
+              <mat-option>--Select--</mat-option>
+              <mat-option value=1>Yes</mat-option>
+              <mat-option value=0>No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div fxLayout.gt-sm="row" fxLayout="column">
+
+        <div fxFlex.gt-sm="50%">
+          <mat-form-field >
+            <input matInput placeholder="DOB" [matDatepicker]="picker" [max]="maxDate" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          </div> 
+          
+          <div fxFlex.gt-sm="50%" >
+            <mat-form-field >
+              <mat-select type="text" formControlName="gender" placeholder="Gender">
+                <mat-option>--Select--</mat-option>
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+                <mat-option value="Transgender">Transgender</mat-option>
+                <mat-option value="Others">Others</mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+      </div>
+
+        <mat-form-field >
+          <input matInput placeholder="password" type="password" [type]="hide ? 'password':'text'" formControlName="password">
+            <i class="material-icons" matSuffix (click) = "hide = !hide">
+            {{hide ? 'visibility' : 'visibility_off'}}
+            </i> 
+        </mat-form-field>
+
+      <button [disabled]='customerSignupForm.invalid' class="btn btn-success" type="submit">Submit</button>
+    </form>
+    <a [routerLink]="'/login'" ><div style="text-align: center;">Already Registered...Login</div></a>
+  </mat-card>
+</div>

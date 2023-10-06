@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <mat-icon class="icon">perm_identity</mat-icon>
+        <br/>
+        <br/>
+        <h4 class="name">{{loginService.getUser().name}}</h4>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/underDashboard">
+            <mat-icon>dashboard</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/underDashboard/approveReject">
+            <mat-icon>done_outline</mat-icon>
+            <span>User's Requests</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/underDashboard/claimReq">
+            <mat-icon>done_outline</mat-icon>
+            <span>Claim Requests</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

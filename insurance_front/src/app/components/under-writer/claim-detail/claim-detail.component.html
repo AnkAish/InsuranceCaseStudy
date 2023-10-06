@@ -1,0 +1,37 @@
+<mat-card class="margin">
+    <h1 style="font-weight: bold;text-align: center;">Claim Detail</h1>
+    <mat-list >
+        <!-- User Detail -->
+        <mat-list-item class="fnt">
+           <div mat-line>NAME: {{claim_object.user.name}}  </div>
+           <div mat-line>EMAIL: {{claim_object.user.email}}</div>
+           <div mat-line>AGE: {{claim_object.user.age}}</div>
+           <div mat-line *ngIf="claim_object.user.isSmoker">IS-SMOKER: YES</div>
+           <div mat-line *ngIf="claim_object.user.isAlcoholer">IS-ALCOHOLER: YES</div>
+           <mat-divider></mat-divider>
+        </mat-list-item>
+
+        <!-- User Plan Detail -->
+        <mat-list-item class="fnt">
+           <div mat-line>PLAN NAME: {{claim_object.userPlanDetail.plan.planName}}</div>
+           <div mat-line>USER PLAN STARTS: {{claim_object.userPlanDetail.startDate}}</div>
+           <div mat-line>USER PLAN ENDS: {{claim_object.userPlanDetail.endDate}}</div>
+           <div mat-line>AMOUNT PAID: {{claim_object.userPlanDetail.amountPaid}}</div>
+           <div mat-line>REMAINING PREMIUM: {{claim_object.userPlanDetail.count}}</div>
+           <mat-divider></mat-divider>
+        </mat-list-item>
+        <!-- Claim Reason -->
+        <mat-list-item class="fnt">
+           <div mat-line>REASON: {{claim_object.reason}}</div>
+           <div mat-line>CLAIM AMOUNT: {{claim_object.claimAmount}}</div>
+           <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+    <div style="margin-left: 50px;">
+        <button type="button" (click)="set2()" class="btn btn-success ">Approve</button>
+        <button type="button" (click)="set0()" class="btn btn-danger ml-5">Reject</button>
+    </div>
+  </mat-card>
+
+
+  

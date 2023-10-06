@@ -1,0 +1,27 @@
+<div class="container">
+<mat-card *ngIf="policy_data">
+  <h1 style="font-weight: bold;">All Policies</h1>
+  <mat-list *ngFor="let p of policy_data">
+      <mat-list-item >
+         
+         <div mat-line><mat-icon mat-list-icon>category</mat-icon><span style="font-weight: 500;">{{p.policyName}}</span></div>
+         <div mat-line>DESCRIPTION: {{p.policyDetail}}</div>
+         <div mat-line>
+            <mat-card-action>
+               <button (click)="clickMethod(p.policyId)" mat-stroked-button color="accent" style="margin-left: 20px;">Delete</button>
+            </mat-card-action>
+         </div> 
+         
+      </mat-list-item>
+      <br/>
+      <mat-divider></mat-divider>
+  </mat-list>
+
+  <div align="center" class="container text-center mt20">
+     <button routerLink="/admin/addPolicy" mat-raised-button color="accent">Add Policy</button>
+  </div>
+</mat-card>
+</div>
+<div class="container" *ngIf="!policy_data">
+   <h1 style="font-size: 70px; font-weight: 500;">No Policy Yet.</h1>
+ </div>

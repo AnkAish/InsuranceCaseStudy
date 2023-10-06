@@ -1,0 +1,25 @@
+<div class="container">
+   <mat-card *ngIf="user">
+       <h1 style="font-weight: bold;">All Users</h1>
+       <mat-list  *ngFor="let u of user" >
+           <mat-list-item>   
+              <div mat-line><mat-icon mat-list-icon>perm_identity</mat-icon>NAME: {{u.name}}</div>
+              <div mat-line>EMAIL: {{u.email}} &nbsp; &nbsp; &nbsp; DOB: {{u.dob}} &nbsp; &nbsp; &nbsp; CONTACT: {{u.contactNo}}</div>
+              <div mat-line><span *ngIf="u.isSmoker">SMOKER: Yes</span> &nbsp; &nbsp; &nbsp; <span *ngIf="u.isAlcoholer">ALCOHOLER: Yes</span></div>
+              <div mat-line>
+                 <mat-card-action>
+                    <br/>
+                    <button  [routerLink] = "['/admin/userPlans',u.id]" mat-flat-button color="primary">User plans</button>
+                    <br/>
+                    <br/>
+                    <br/>
+                 </mat-card-action>
+              </div>
+              <mat-divider></mat-divider>
+           </mat-list-item>
+       </mat-list>
+     </mat-card>
+   </div>
+   <div class="container" *ngIf="!user">
+      <h1 style="font-size: 70px; font-weight: 500;">No User Yet.</h1>
+    </div>

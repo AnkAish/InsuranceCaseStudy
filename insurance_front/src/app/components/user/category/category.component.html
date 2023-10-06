@@ -1,0 +1,21 @@
+<div class="container">
+<mat-card *ngIf="policy_data">
+  <h1 style="font-weight: bold;">All Policies</h1>
+  <mat-list *ngFor="let p of policy_data">
+      <mat-list-item >
+         <div mat-line><mat-icon mat-list-icon>category</mat-icon>
+            <h1> {{p.policyName}}</h1></div>
+            <button mat-raised-button color="accent" style="float: right;" [routerLink] = "['/dashBoard/buyPlan/', p.policyId]">View Plans</button>
+         <div mat-line>
+            <p id = "content">Description: {{p.policyDetail}}
+            </p>
+         </div>     
+      </mat-list-item>
+      <br/>
+      <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>
+</div>
+<div class="container" *ngIf="!policy_data">
+   <h1 style="font-size: 70px; font-weight: 500;">No Policy Yet.</h1>
+ </div>

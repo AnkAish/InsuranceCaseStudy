@@ -1,0 +1,33 @@
+.spacer{
+    flex:1 1 auto;
+}
+
+/*.mat-select-arrow {
+    width: fit-content;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid;
+    margin: 0 4px;
+}*/
+
+/*.policy-dropdown {
+      max-width:none;
+      width: 100vw; 
+      margin-left: -8px;
+      margin-top: 24px;
+      overflow: visible;
+  }*/
+  
+  .policy-row{
+      width:auto;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  

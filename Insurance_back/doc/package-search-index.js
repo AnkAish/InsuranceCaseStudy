@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.insurance"},{"l":"com.insurance.controller"},{"l":"com.insurance.entities"},{"l":"com.insurance.exception"},{"l":"com.insurance.helper"},{"l":"com.insurance.jwt.config"},{"l":"com.insurance.repository"},{"l":"com.insurance.services.impl"}]

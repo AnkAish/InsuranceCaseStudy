@@ -1,0 +1,38 @@
+<mat-card style="margin-top: 100px;">
+    <h1 style="font-weight: bold;">{{planName}}</h1>
+    <mat-list>
+        <mat-list-item>
+           <div mat-line style="font-weight: 300;font-size: large;">  
+            <h3>Type : {{planType}}</h3>
+           </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item style="height: 100%; margin-top: 5px;">
+        <div style="font-weight: 300;font-size: large;">
+            <p>Description : {{planDescription}}</p>   
+         </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div mat-line style="font-weight: 300;font-size: large;">
+             <h3>Age Group : {{minAge}} To {{maxAge}} (EXCLUSION) years old</h3>
+            </div>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item>
+            <div mat-line style="font-weight: 300;font-size: large;">
+             <h3>Validity : {{validity}} years</h3>
+            </div>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item>
+            <div mat-line style="font-weight: 300;font-size: large;">
+             <h3>Payment frequency : in each {{paymentFrequency}} month</h3>
+            </div>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+    </mat-list>
+    <div align="center" class="container text-center mt20">
+      <button mat-raised-button color="accent">Buy Plan</button>
+   </div>
+  </mat-card>

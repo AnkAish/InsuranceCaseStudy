@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <mat-icon class="icon">perm_identity</mat-icon>
+        <br/>
+        <br/>
+        <h4 class="name">{{name}}</h4>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/dashBoard">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/dashBoard/category">
+            <mat-icon>toc</mat-icon>
+            <span>Policy</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/dashBoard/registeredPlan">
+            <mat-icon>folder</mat-icon>
+            <span>Registered Plans</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/dashBoard/registeredClaim">
+            <mat-icon>folder</mat-icon>
+            <span>Claim</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/dashBoard/profile" >
+            <mat-icon>account_circle</mat-icon>
+            <span>Profile</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

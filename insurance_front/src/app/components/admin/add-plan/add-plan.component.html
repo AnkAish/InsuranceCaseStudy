@@ -1,0 +1,85 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Add New Plan</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" (ngSubmit)="addPlan()">
+
+      <mat-card-content>
+          <div class="mat-form-field--inline">
+          <mat-form-field class="example-full-width" >
+              <mat-label>Plan Name</mat-label>
+              <input
+              [(ngModel)] ="plan.planName"
+              matInput placeholder="name" 
+              name="planName">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width">
+              <mat-label>Plan Type</mat-label>
+              <input
+              [(ngModel)] ="plan.planType"
+              matInput placeholder="Type"
+              name="type" >
+            </mat-form-field>    
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Plan Description</mat-label>
+          <input
+          [(ngModel)] ="plan.planDescription" 
+          matInput placeholder="Description"
+          name="planDescription" >
+        </mat-form-field>
+        <div class="mat-form-field--inline">
+        <mat-form-field class="example-full-width">
+          <mat-label>Minimum Age</mat-label> 
+          <input
+          [(ngModel)] ="plan.minAge" 
+          name="minAge"
+          matInput type="number" placeholder="minimum Age" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Maximum Age</mat-label>
+          <input
+          [(ngModel)] ="plan.maxAge" 
+          name="maxAge"
+          matInput type="number" placeholder="maximum Age" >
+        </mat-form-field>
+        </div>
+        <div class="mat-form-field--inline">
+        <mat-form-field class="example-full-width">
+          <mat-label>Validity</mat-label>
+          <input
+          [(ngModel)] ="plan.planValidity" 
+          matInput type="number" name="planValidity" placeholder="Enter Validity" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Base Amount</mat-label>
+          <input
+          [(ngModel)] ="plan.baseValue" 
+          type="number" name="baseValue" placeholder="baseValue" matInput>
+        </mat-form-field>
+        </div>
+        <div class="mat-form-field--inline">
+          <mat-form-field class="example-full-width">
+            <mat-label>Payment Frequency</mat-label>
+            <input
+            [(ngModel)] ="plan.paymentFrequency" 
+            matInput type="number" name="paymentFrequency" placeholder="Enter Frequency" >
+          </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Policy</mat-label>
+          <mat-select required name="policy" [(ngModel)] ="plan.policy.policyId">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let p of policy_data" [value]="p.policyId">{{p.policyName}}</mat-option>
+          </mat-select>
+        </mat-form-field> 
+        </div>  
+      </mat-card-content>
+
+      <button type="submit" mat-stroked-button color="accent" class="btn-block">Add Plan</button>
+
+    </form>
+  </mat-card>
+</div>

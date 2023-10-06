@@ -1,0 +1,39 @@
+.mat-form-field--inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-form-field--inline .mat-form-field {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.mat-form-field--inline .mat-form-field:nth-child(1) {
+  margin-right: 20px;
+}
+
+.title-center{
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.main-div mat-card{
+  padding: 0px;
+}
+.login-form {
+padding: 20px; 
+
+}
+

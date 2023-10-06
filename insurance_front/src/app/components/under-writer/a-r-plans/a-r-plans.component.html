@@ -1,0 +1,29 @@
+<div class="container table-responsive" *ngIf="user_plan_object">
+    <table class="table table-striped wid">
+        <thead>
+          <tr>
+            <th>OrderId</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Policy</th>
+            <th>Plan</th>
+            <th>PlanType</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of user_plan_object">
+            <td>{{u.orderId}}</td>
+            <td>{{u.startDate}}</td>
+            <td>{{u.endDate}}</td>
+            <td>{{u.plan.policy.policyName}}</td>
+            <td>{{u.plan.planName}}</td>
+            <td>{{u.plan.planType}}</td>
+            <td><button type="button" [routerLink]="['/underDashboard/userDetail',u.orderId]" class="btn btn-outline-warning">See Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div class="container" *ngIf="!user_plan_object">
+  <h1 style="font-size: 70px; font-weight: 500;">No Requests Yet.</h1>
+</div>
